@@ -30,6 +30,11 @@ typedef enum{
 
 @property (assign, nonatomic) CGFloat duringTime;
 
+/**
+ *  是否在展开之后，第一次点击遍收回button
+ */
+@property (assign, nonatomic) BOOL isHideWhenClickInFistTimes;
+
 // frame 是button的初始frame
 - (instancetype)initWithFrame:(CGRect)frame scrollDirection:(scrollDirection)direction;
 
@@ -38,9 +43,9 @@ typedef enum{
 // 设置button的frame是没用的
 - (void)addButton:(UIButton *)button buttonClick:(buttonClick)buttonClick;
 
-- (void)showAnimate;
+- (void)showAnimate:(void(^)())animate completion:(void(^)())completion;
 
-- (void)hideAnimate;
+- (void)hideAnimate:(void(^)())animate completion:(void(^)())completion;
 
 @end
 
