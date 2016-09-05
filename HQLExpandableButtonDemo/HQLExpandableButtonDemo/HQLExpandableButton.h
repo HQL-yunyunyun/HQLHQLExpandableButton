@@ -24,7 +24,7 @@ typedef enum{
 /**
  *  子button
  */
-@property (strong, nonatomic, readonly) NSArray *subButtons;
+@property (strong, nonatomic, readonly) NSArray <UIButton *>*subButtons;
 
 @property (assign, nonatomic) scrollDirection diretion;
 
@@ -35,6 +35,7 @@ typedef enum{
 
 - (void)addAction:(HQlExpandableButtonAction *)action;
 
+// 设置button的frame是没用的
 - (void)addButton:(UIButton *)button buttonClick:(buttonClick)buttonClick;
 
 - (void)showAnimate;
